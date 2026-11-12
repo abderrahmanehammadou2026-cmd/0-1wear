@@ -1,0 +1,1349 @@
+```html
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>0/1 WEAR | المتجر الرسمي للملابس والأحذية العصرية</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Cairo & Orbitron for Metallic Brand Logo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Orbitron:wght@700;900&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Cairo', 'sans-serif'],
+                        brand: ['Orbitron', 'sans-serif'],
+                    },
+                    colors: {
+                        obsidian: '#09090b',
+                        charcoal: '#18181b',
+                        zincCard: '#121215',
+                        silverLight: '#f4f4f5',
+                        silverMid: '#a1a1aa',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #09090b;
+            color: #f4f4f5;
+            font-family: 'Cairo', sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Metallic Chrome Text Gradient matching 0/1 WEAR logo */
+        .metallic-text {
+            background: linear-gradient(135deg, #ffffff 0%, #a1a1aa 45%, #e4e4e7 55%, #52525b 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0px 2px 15px rgba(255, 255, 255, 0.12);
+        }
+
+        /* Metallic Button & Border Effects */
+        .metallic-bg {
+            background: linear-gradient(135deg, #f4f4f5 0%, #a1a1aa 50%, #e4e4e7 100%);
+            color: #09090b;
+        }
+        .metallic-bg:hover {
+            background: linear-gradient(135deg, #ffffff 0%, #d4d4d8 50%, #ffffff 100%);
+            box-shadow: 0 0 24px rgba(212, 212, 216, 0.38);
+        }
+
+        .metallic-border {
+            border: 1px solid rgba(212, 212, 216, 0.16);
+        }
+        .metallic-border:hover {
+            border-color: rgba(212, 212, 216, 0.45);
+        }
+
+        /* Studio lighting radial effect matching the uploaded product backgrounds */
+        .studio-backdrop {
+            background: radial-gradient(circle at 50% 42%, #27272a 0%, #141417 62%, #09090b 100%);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #09090b;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #27272a;
+            border-radius: 3px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #52525b;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        @keyframes floatSlow {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+        }
+        .animate-float {
+            animation: floatSlow 4s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-zinc-200 selection:text-black">
+
+    <!-- Top Announcement Bar -->
+    <div class="bg-gradient-to-r from-zinc-900 via-zinc-800/90 to-zinc-900 border-b border-zinc-800 py-2 px-4 text-center text-xs sm:text-sm font-bold text-zinc-200 flex items-center justify-center gap-2">
+        <span class="inline-block w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>توصيل سريع لجميع المدن المغربية 🇲🇦 | الدفع عند الاستلام بعد معاينة المنتج</span>
+    </div>
+
+    <!-- Sticky Navigation Header -->
+    <header class="sticky top-0 z-40 bg-obsidian/90 backdrop-blur-md border-b border-zinc-800/80">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 sm:h-20 flex items-center justify-between gap-3">
+            
+            <!-- Brand Logo -->
+            <a href="#" class="flex items-center gap-3 group focus:outline-none">
+                <div class="w-11 h-11 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-zinc-800 to-zinc-950 border border-zinc-700/80 flex flex-col items-center justify-center shadow-inner group-hover:border-zinc-400 transition">
+                    <span dir="ltr" class="font-brand font-black text-base sm:text-lg leading-none metallic-text tracking-tighter">0/1</span>
+                    <span dir="ltr" class="font-brand text-[7px] tracking-[0.22em] text-zinc-400 font-bold mt-0.5">WEAR</span>
+                </div>
+                <div class="flex flex-col">
+                    <span dir="ltr" class="font-brand font-black text-lg sm:text-2xl tracking-wider metallic-text leading-none text-right">0/1 WEAR</span>
+                    <span class="text-[10px] sm:text-xs text-zinc-400 font-bold mt-1">المتجر الرسمي • المغرب</span>
+                </div>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-6 text-sm font-bold text-zinc-300">
+                <a href="#productsSection" class="hover:text-white transition">المنتجات</a>
+                <a href="#fullPackBanner" class="hover:text-white transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-fire text-amber-400 text-xs"></i>
+                    <span>الباقة الملكية الكاملة</span>
+                </a>
+                <button onclick="openPhotoStudioModal()" class="hover:text-white transition flex items-center gap-1.5 text-emerald-400">
+                    <i class="fa-solid fa-images"></i>
+                    <span>إدراج صورك الحقيقية</span>
+                </button>
+            </nav>
+
+            <!-- Store Actions (Photo Uploader + Settings + Cart) -->
+            <div class="flex items-center gap-2">
+                <!-- Quick Real Photos Upload Button -->
+                <button onclick="openPhotoStudioModal()" title="إدراج صور المنتجات الحقيقية من هاتفك" class="px-3 py-2.5 rounded-xl bg-emerald-950/70 hover:bg-emerald-900/80 border border-emerald-700/60 text-emerald-300 flex items-center gap-1.5 text-xs sm:text-sm font-bold transition">
+                    <i class="fa-solid fa-camera"></i>
+                    <span class="hidden sm:inline">إدراج الصور</span>
+                </button>
+
+                <!-- Merchant Settings Button -->
+                <button onclick="toggleSellerModal()" title="إعدادات المتجر ورقم الواتساب" class="p-2.5 sm:px-3.5 sm:py-2.5 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-800 text-zinc-300 flex items-center gap-2 text-xs sm:text-sm font-bold transition">
+                    <i class="fa-solid fa-gear text-zinc-400"></i>
+                    <span class="hidden lg:inline">الإعدادات</span>
+                </button>
+
+                <!-- Cart Button -->
+                <button onclick="toggleCart(true)" class="relative px-3.5 sm:px-4 py-2.5 rounded-xl metallic-bg font-black text-xs sm:text-sm flex items-center gap-2 transition transform active:scale-95 shadow-lg">
+                    <i class="fa-solid fa-bag-shopping text-base"></i>
+                    <span>السلة</span>
+                    <span id="cartCountBadge" class="px-2 py-0.5 text-xs rounded-full bg-obsidian text-white font-black">0</span>
+                </button>
+            </div>
+        </div>
+
+        <!-- Category Filter Bar -->
+        <div class="border-t border-zinc-900 bg-obsidian/90">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2.5 flex items-center gap-2 overflow-x-auto no-scrollbar" id="categoryPills">
+                <button onclick="filterProducts('all')" data-cat="all" class="cat-pill shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-extrabold transition bg-zinc-100 text-zinc-950">
+                    الكل (5)
+                </button>
+                <button onclick="filterProducts('packs')" data-cat="packs" class="cat-pill shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition bg-zinc-900 text-zinc-300 hover:bg-zinc-800 border border-zinc-800 flex items-center gap-1.5">
+                    <i class="fa-solid fa-crown text-amber-400"></i>
+                    <span>الباقات التوفيرية</span>
+                </button>
+                <button onclick="filterProducts('clothing')" data-cat="clothing" class="cat-pill shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition bg-zinc-900 text-zinc-300 hover:bg-zinc-800 border border-zinc-800">
+                    الملابس (تيشيرت وهودي)
+                </button>
+                <button onclick="filterProducts('shoes')" data-cat="shoes" class="cat-pill shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition bg-zinc-900 text-zinc-300 hover:bg-zinc-800 border border-zinc-800">
+                    الأحذية الرياضية
+                </button>
+                <button onclick="filterProducts('accessories')" data-cat="accessories" class="cat-pill shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition bg-zinc-900 text-zinc-300 hover:bg-zinc-800 border border-zinc-800">
+                    الإكسسوارات (قبعة 3D)
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden border-b border-zinc-800/80 studio-backdrop">
+        <div class="absolute inset-0 opacity-10 pointer-events-none" style="background-image: radial-gradient(#a1a1aa 1px, transparent 1px); background-size: 24px 24px;"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                
+                <!-- Hero Text Content -->
+                <div class="lg:col-span-7 text-right space-y-5">
+                    <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-zinc-900/90 border border-zinc-700/80 text-xs sm:text-sm text-zinc-300">
+                        <span class="px-2 py-0.5 rounded bg-zinc-200 text-zinc-950 font-extrabold text-[11px]">إصدار حصري</span>
+                        <span>تشكيلة <strong dir="ltr" class="font-brand text-white">0/1 WEAR</strong> الجديدة باللون الأسود والمعدني الفاخر</span>
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-black leading-tight">
+                        فخامة التصميم المعدني <br>
+                        <span dir="ltr" class="font-brand metallic-text inline-block mt-1">0/1 WEAR</span>
+                    </h1>
+
+                    <p class="text-zinc-400 text-sm sm:text-lg max-w-2xl leading-relaxed">
+                        اكتشف تشكيلة الملابس والأحذية الرياضية المصممة بجودة عالية وشعار ثلاثي الأبعاد بارز مع علب الهدايا السوداء الفاخرة. اطلب قطعتك المفضلة الآن أو احصل على <strong class="text-zinc-100">الباقة الملكية الكاملة</strong> بسعر استثنائي والدفع عند الاستلام.
+                    </p>
+
+                    <div class="flex flex-wrap items-center gap-3 pt-1">
+                        <a href="#productsSection" class="px-6 py-3.5 rounded-xl metallic-bg font-black text-sm sm:text-base flex items-center gap-2.5 shadow-xl transition transform hover:-translate-y-0.5">
+                            <span>تصفح المنتجات الآن</span>
+                            <i class="fa-solid fa-arrow-down"></i>
+                        </a>
+                        <button onclick="quickBuyBundle()" class="px-5 py-3.5 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 text-zinc-100 border border-zinc-700 font-bold text-sm sm:text-base flex items-center gap-2 transition">
+                            <i class="fa-solid fa-crown text-amber-400"></i>
+                            <span>اطلب الباقة الكاملة — 949 درهم</span>
+                        </button>
+                    </div>
+
+                    <!-- Trust Badges -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-4 border-t border-zinc-800/80 max-w-2xl">
+                        <div class="flex items-center gap-3 bg-zinc-900/50 p-2.5 rounded-xl border border-zinc-800/70">
+                            <div class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-700 flex items-center justify-center text-emerald-400 shrink-0">
+                                <i class="fa-solid fa-hand-holding-dollar"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs sm:text-sm font-extrabold text-zinc-100">الدفع عند الاستلام</div>
+                                <div class="text-[11px] text-zinc-400">افحص طلبك قبل الدفع</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 bg-zinc-900/50 p-2.5 rounded-xl border border-zinc-800/70">
+                            <div class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-700 flex items-center justify-center text-zinc-200 shrink-0">
+                                <i class="fa-solid fa-truck-fast"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs sm:text-sm font-extrabold text-zinc-100">توصيل خلال 24-48 ساعة</div>
+                                <div class="text-[11px] text-zinc-400">لجميع المدن المغربية</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-3 bg-zinc-900/50 p-2.5 rounded-xl border border-zinc-800/70">
+                            <div class="w-10 h-10 rounded-xl bg-zinc-900 border border-zinc-700 flex items-center justify-center text-amber-400 shrink-0">
+                                <i class="fa-solid fa-box-open"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs sm:text-sm font-extrabold text-zinc-100">علب رسمية فاخرة</div>
+                                <div class="text-[11px] text-zinc-400">تغليف أسود ملكي</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hero 3D Metallic Brand Visual Showcase -->
+                <div class="lg:col-span-5">
+                    <div class="relative mx-auto max-w-md rounded-3xl p-6 bg-gradient-to-b from-zinc-900/90 to-zinc-950 border border-zinc-800 shadow-2xl text-center overflow-hidden">
+                        <div class="animate-float py-2">
+                            <svg viewBox="0 0 400 230" class="w-full h-44 sm:h-52 mx-auto drop-shadow-[0_18px_25px_rgba(0,0,0,0.85)]">
+                                <defs>
+                                    <linearGradient id="chromeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                        <stop offset="0%" stop-color="#ffffff"/>
+                                        <stop offset="30%" stop-color="#d4d4d8"/>
+                                        <stop offset="50%" stop-color="#71717a"/>
+                                        <stop offset="75%" stop-color="#f4f4f5"/>
+                                        <stop offset="100%" stop-color="#3f3f46"/>
+                                    </linearGradient>
+                                    <linearGradient id="darkMetal" x1="0%" y1="0%" x2="0%" y2="100%">
+                                        <stop offset="0%" stop-color="#52525b"/>
+                                        <stop offset="100%" stop-color="#18181b"/>
+                                    </linearGradient>
+                                </defs>
+                                <g transform="translate(55, 18)">
+                                    <circle cx="70" cy="65" r="52" fill="none" stroke="url(#chromeGrad)" stroke-width="22" stroke-dasharray="280 18"/>
+                                    <path d="M 35 22 A 56 56 0 0 1 95 14" fill="none" stroke="#e4e4e7" stroke-width="3.5"/>
+                                    <path d="M 105 108 A 56 56 0 0 1 45 116" fill="none" stroke="#a1a1aa" stroke-width="3.5"/>
+                                    <polygon points="155,118 192,12 212,12 175,118" fill="url(#chromeGrad)" stroke="#d4d4d8" stroke-width="1.5"/>
+                                    <polygon points="222,14 242,14 222,42" fill="url(#chromeGrad)"/>
+                                    <polygon points="222,50 242,24 242,118 222,118" fill="url(#darkMetal)" stroke="url(#chromeGrad)" stroke-width="2"/>
+                                    <text x="135" y="168" text-anchor="middle" fill="url(#chromeGrad)" font-family="Orbitron, sans-serif" font-weight="900" font-size="40" letter-spacing="10">WEAR</text>
+                                </g>
+                            </svg>
+                        </div>
+
+                        <div class="mt-2 pt-4 border-t border-zinc-800/90 flex items-center justify-between text-xs sm:text-sm">
+                            <span class="text-zinc-300 font-bold">هل تريد عرض صورك المرفقة داخل البطاقات؟</span>
+                            <button onclick="openPhotoStudioModal()" class="font-extrabold text-emerald-400 bg-emerald-950/60 hover:bg-emerald-900/70 border border-emerald-700/60 px-3 py-1.5 rounded-xl transition flex items-center gap-1.5">
+                                <i class="fa-solid fa-upload"></i>
+                                <span>رفع الصور الآن</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Products Grid Section -->
+    <main id="productsSection" class="flex-grow max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-10">
+        
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+            <div>
+                <h2 class="text-2xl sm:text-3xl font-black flex items-center gap-2.5">
+                    <span class="w-2 h-7 rounded-full bg-zinc-200 inline-block"></span>
+                    <span>منتجات <span dir="ltr" class="font-brand metallic-text">0/1 WEAR</span> الرسمية</span>
+                </h2>
+                <p class="text-zinc-400 text-xs sm:text-sm mt-1">اختر المقاس المناسب واضغط على «اطلب الآن» للشراء المباشر أو «تغيير الصورة» لوضع صورك من الهاتف.</p>
+            </div>
+
+            <!-- Search Input -->
+            <div class="flex items-center gap-2 w-full sm:w-auto">
+                <div class="relative flex-grow sm:w-64">
+                    <input type="text" id="searchInput" oninput="handleSearch(this.value)" placeholder="ابحث عن تيشيرت، هودي، حذاء..." class="w-full bg-zinc-900 border border-zinc-800 focus:border-zinc-500 rounded-xl py-2.5 pr-10 pl-4 text-xs sm:text-sm text-zinc-100 placeholder-zinc-500 focus:outline-none transition">
+                    <i class="fa-solid fa-magnifying-glass absolute right-3.5 top-3 text-zinc-500 text-sm"></i>
+                </div>
+            </div>
+        </div>
+
+        <!-- Products Grid Container -->
+        <div id="productsGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <!-- Populated via JavaScript -->
+        </div>
+
+        <!-- Hidden File Input for Single Product Photo Upload -->
+        <input type="file" id="productImageUploader" accept="image/*" class="hidden" onchange="handleImageFileSelected(event)">
+
+    </main>
+
+    <!-- Full Outfit Bundle Banner -->
+    <section id="fullPackBanner" class="max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 pb-12">
+        <div class="rounded-3xl bg-gradient-to-r from-zinc-900 via-zinc-950 to-zinc-900 border border-zinc-800 p-6 sm:p-10 relative overflow-hidden">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                <div class="lg:col-span-8 space-y-3">
+                    <span class="px-3.5 py-1 rounded-full bg-amber-500/15 border border-amber-500/40 text-amber-300 text-xs font-extrabold inline-block">
+                        🔥 العرض الأكثر مبيعاً — وفّر 197 درهم
+                    </span>
+                    <h3 class="text-2xl sm:text-3xl font-black">
+                        الباقة الملكية الكاملة <span dir="ltr" class="font-brand metallic-text">Full Pack 0/1 WEAR</span>
+                    </h3>
+                    <p class="text-zinc-300 text-sm sm:text-base leading-relaxed">
+                        احصل على الطقم الكامل المكون من 4 قطع أصلية مع العلب السوداء الفاخرة: <strong class="text-white">تيشيرت أسود + هودي رمادي غامق مع العلبة + حذاء رياضي مع العلبة + قبعة مطرزة 3D</strong> بسعر <strong class="text-emerald-400">949 درهم فقط</strong> عوض 1146 درهم!
+                    </p>
+                    <div class="pt-2 flex flex-wrap gap-3">
+                        <button onclick="quickBuyBundle()" class="px-6 py-3.5 rounded-xl metallic-bg font-black text-sm flex items-center gap-2 shadow-lg">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>اطلب الباقة الكاملة الآن — 949 درهم</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Summary Checklist -->
+                <div class="lg:col-span-4 bg-obsidian/90 border border-zinc-800 rounded-2xl p-4 space-y-2.5 text-xs sm:text-sm">
+                    <div class="font-extrabold text-zinc-100 pb-2 border-b border-zinc-800">محتويات الباقة الملكية الكاملة:</div>
+                    <div class="flex items-center justify-between text-zinc-300">
+                        <span>✔️ تيشيرت 0/1 WEAR الأسود</span>
+                        <span class="text-zinc-500 line-through">199 درهم</span>
+                    </div>
+                    <div class="flex items-center justify-between text-zinc-300">
+                        <span>✔️ هودي 0/1 WEAR الرمادي + العلبة</span>
+                        <span class="text-zinc-500 line-through">349 درهم</span>
+                    </div>
+                    <div class="flex items-center justify-between text-zinc-300">
+                        <span>✔️ حذاء 0/1 WEAR الرياضي + العلبة</span>
+                        <span class="text-zinc-500 line-through">449 درهم</span>
+                    </div>
+                    <div class="flex items-center justify-between text-zinc-300">
+                        <span>✔️ قبعة 0/1 WEAR المطرزة 3D</span>
+                        <span class="text-zinc-500 line-through">149 درهم</span>
+                    </div>
+                    <div class="flex items-center justify-between text-emerald-400 font-extrabold pt-2 border-t border-zinc-800">
+                        <span>🎁 التوصيل + العلب الفاخرة</span>
+                        <span>مجاناً</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-zinc-950 border-t border-zinc-900 py-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-zinc-500">
+            <div class="flex items-center gap-2">
+                <span dir="ltr" class="font-brand font-black text-zinc-300">0/1 WEAR</span>
+                <span>— جميع الحقوق محفوظة © 2026</span>
+            </div>
+            <div class="flex flex-wrap items-center gap-4">
+                <span class="flex items-center gap-1.5 text-zinc-400"><i class="fa-solid fa-shield-halved text-emerald-400"></i> الدفع عند الاستلام</span>
+                <span class="flex items-center gap-1.5 text-zinc-400"><i class="fa-solid fa-rotate-left text-zinc-300"></i> ضمان استبدال المقاس</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Slide-Over Shopping Cart & Express COD Checkout Drawer (RTL Left Side) -->
+    <div id="cartDrawerBackdrop" onclick="toggleCart(false)" class="fixed inset-0 bg-black/75 backdrop-blur-sm z-50 hidden opacity-0 transition-opacity duration-300"></div>
+    
+    <aside id="cartDrawer" class="fixed top-0 left-0 bottom-0 w-full max-w-md bg-zinc-950 border-r border-zinc-800 z-50 transform -translate-x-full transition-transform duration-300 flex flex-col shadow-2xl">
+        
+        <!-- Drawer Header -->
+        <div class="p-4 sm:p-5 border-b border-zinc-800 flex items-center justify-between bg-obsidian">
+            <div class="flex items-center gap-2.5">
+                <i class="fa-solid fa-bag-shopping text-zinc-200 text-lg"></i>
+                <h3 class="font-black text-base sm:text-lg">سلة المشتريات وإتمام الطلب</h3>
+            </div>
+            <button onclick="toggleCart(false)" class="w-8 h-8 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-400 hover:text-white flex items-center justify-center transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+        </div>
+
+        <!-- Drawer Body -->
+        <div class="flex-1 overflow-y-auto p-4 sm:p-5 space-y-6">
+            
+            <!-- Cart Items List -->
+            <div id="cartItemsContainer" class="space-y-3">
+                <!-- Populated dynamically -->
+            </div>
+
+            <!-- Express COD Customer Form -->
+            <form id="codCheckoutForm" onsubmit="submitOrder(event)" class="bg-zinc-900/70 border border-zinc-800 rounded-2xl p-4 space-y-3.5">
+                <div class="flex items-center justify-between border-b border-zinc-800 pb-2.5">
+                    <h4 class="font-extrabold text-sm sm:text-base text-zinc-100 flex items-center gap-2">
+                        <i class="fa-solid fa-truck-fast text-emerald-400"></i>
+                        <span>معلومات التوصيل (الدفع عند الاستلام)</span>
+                    </h4>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-zinc-300 mb-1">الاسم الكامل *</label>
+                    <input type="text" id="custName" required placeholder="مثال: أمين العلوي" class="w-full bg-obsidian border border-zinc-800 focus:border-zinc-400 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-zinc-300 mb-1">رقم الهاتف (واتساب / مكالمات) *</label>
+                    <input type="tel" id="custPhone" required dir="ltr" placeholder="06XXXXXXXX / 07XXXXXXXX" class="w-full text-right bg-obsidian border border-zinc-800 focus:border-zinc-400 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-zinc-300 mb-1">المدينة *</label>
+                    <select id="custCity" required class="w-full bg-obsidian border border-zinc-800 focus:border-zinc-400 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                        <option value="">اختر مدينتك...</option>
+                        <option value="الدار البيضاء">الدار البيضاء</option>
+                        <option value="الرباط">الرباط</option>
+                        <option value="مراكش">مراكش</option>
+                        <option value="طنجة">طنجة</option>
+                        <option value="فاس">فاس</option>
+                        <option value="أكادير">أكادير</option>
+                        <option value="بني ملال">بني ملال</option>
+                        <option value="خريبكة">خريبكة</option>
+                        <option value="مكناس">مكناس</option>
+                        <option value="وجدة">وجدة</option>
+                        <option value="القنيطرة">القنيطرة</option>
+                        <option value="تطوان">تطوان</option>
+                        <option value="آسفي">آسفي</option>
+                        <option value="الجديدة">الجديدة</option>
+                        <option value="المحمدية">المحمدية</option>
+                        <option value="العيون">العيون</option>
+                        <option value="مدينة أخرى">مدينة أخرى (اكتبها في العنوان)</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-zinc-300 mb-1">العنوان الكامل للتوصيل *</label>
+                    <input type="text" id="custAddress" required placeholder="الحي، الشارع، رقم المنزل أو الإقامة..." class="w-full bg-obsidian border border-zinc-800 focus:border-zinc-400 rounded-xl px-3.5 py-2.5 text-sm text-white placeholder-zinc-500 focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block text-xs font-bold text-zinc-400 mb-1">ملاحظة إضافية (اختياري)</label>
+                    <input type="text" id="custNotes" placeholder="مثال: يرجى الاتصال قبل التسليم..." class="w-full bg-obsidian border border-zinc-800 focus:border-zinc-400 rounded-xl px-3.5 py-2 text-xs text-white placeholder-zinc-500 focus:outline-none">
+                </div>
+
+                <!-- Order Price Summary inside form -->
+                <div class="pt-3 border-t border-zinc-800 space-y-1.5 text-xs sm:text-sm">
+                    <div class="flex justify-between text-zinc-400">
+                        <span>مجموع المنتجات:</span>
+                        <span id="cartSubtotal">0 درهم</span>
+                    </div>
+                    <div class="flex justify-between text-zinc-400">
+                        <span>مصاريف التوصيل:</span>
+                        <span id="cartShipping" class="text-emerald-400 font-extrabold">توصيل مجاني</span>
+                    </div>
+                    <div class="flex justify-between text-base font-black text-white pt-1.5 border-t border-zinc-800">
+                        <span>المبلغ الإجمالي للدفع عند الاستلام:</span>
+                        <span id="cartTotal" class="text-emerald-400">0 درهم</span>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="pt-2">
+                    <button type="submit" class="w-full py-3.5 rounded-xl metallic-bg font-black text-sm sm:text-base flex items-center justify-center gap-2 shadow-lg transition transform active:scale-95">
+                        <i class="fa-brands fa-whatsapp text-xl"></i>
+                        <span>تأكيد الطلب الآن عبر واتساب</span>
+                    </button>
+                </div>
+            </form>
+
+        </div>
+    </aside>
+
+    <!-- Photo Studio Modal: Upload the 4 Attached Product Photos Directly -->
+    <div id="photoStudioModal" class="fixed inset-0 bg-black/85 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl max-w-2xl w-full p-5 sm:p-6 space-y-4 shadow-2xl max-h-[90vh] overflow-y-auto">
+            <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+                <h3 class="font-black text-base sm:text-lg flex items-center gap-2 text-emerald-400">
+                    <i class="fa-solid fa-images"></i>
+                    <span>إدراج صور منتجاتك الحقيقية في المتجر</span>
+                </h3>
+                <button onclick="closePhotoStudioModal()" class="w-8 h-8 rounded-lg bg-zinc-900 text-zinc-400 hover:text-white flex items-center justify-center">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                اضغط على زر <strong>«اختر الصورة من هاتفك»</strong> أمام كل منتج لرفع الصور التي أرفقتها (الهودي مع العلبة، التيشيرت الأسود، الحذاء مع العلبة، والقبعة المطرزة). يتم حفظ الصور تلقائياً داخل المتجر!
+            </p>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3" id="photoStudioCards">
+                <!-- Populated dynamically for each product -->
+            </div>
+
+            <div class="flex flex-wrap items-center justify-between gap-2 pt-3 border-t border-zinc-800">
+                <button type="button" onclick="resetCustomPhotos()" class="text-xs text-rose-400 hover:text-rose-300 font-bold underline">
+                    استعادة الرسوم التوضيحية الافتراضية
+                </button>
+                <button type="button" onclick="closePhotoStudioModal()" class="px-6 py-2.5 rounded-xl metallic-bg text-xs sm:text-sm font-black">
+                    تم الحفظ — العودة للمتجر
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Merchant Settings Modal -->
+    <div id="sellerModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-2xl max-w-md w-full p-5 sm:p-6 space-y-4 shadow-2xl">
+            <div class="flex items-center justify-between border-b border-zinc-800 pb-3">
+                <h3 class="font-black text-base sm:text-lg flex items-center gap-2">
+                    <i class="fa-solid fa-gear text-zinc-300"></i>
+                    <span>إعدادات المتجر (0/1 WEAR)</span>
+                </h3>
+                <button onclick="toggleSellerModal()" class="text-zinc-400 hover:text-white">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+
+            <div class="space-y-3.5 text-xs sm:text-sm">
+                <div>
+                    <label class="block font-bold text-zinc-200 mb-1">رقم واتساب لاستقبال طلبات الزبائن:</label>
+                    <p class="text-[11px] text-zinc-400 mb-1.5">أدخل الرقم بالصيغة الدولية بدون "+" (مثال: <code dir="ltr" class="text-zinc-200">2126XXXXXXXX</code>)</p>
+                    <input type="text" id="sellerWhatsappInput" dir="ltr" placeholder="212600000000" class="w-full text-left bg-obsidian border border-zinc-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                </div>
+
+                <div>
+                    <label class="block font-bold text-zinc-200 mb-1">سعر التوصيل (بالدرهم):</label>
+                    <p class="text-[11px] text-zinc-400 mb-1.5">ضع <code class="text-zinc-200">0</code> لتفعيل «توصيل مجاني» لجميع الطلبات.</p>
+                    <input type="number" id="sellerShippingInput" min="0" placeholder="0" class="w-full bg-obsidian border border-zinc-700 rounded-xl px-3.5 py-2.5 text-sm text-white focus:outline-none">
+                </div>
+
+                <div class="p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 flex items-center justify-between gap-3">
+                    <div>
+                        <div class="font-bold text-zinc-100">إظهار زر «تغيير الصورة» على البطاقات</div>
+                        <div class="text-[11px] text-zinc-400">يسمح لك بتبديل صورة أي منتج مباشرة من الصفحة الرئيسية.</div>
+                    </div>
+                    <input type="checkbox" id="adminPhotoToggleCheckbox" class="w-5 h-5 accent-zinc-200 rounded cursor-pointer">
+                </div>
+            </div>
+
+            <div class="flex justify-end gap-2 pt-3 border-t border-zinc-800">
+                <button onclick="toggleSellerModal()" class="px-4 py-2.5 rounded-xl bg-zinc-900 text-zinc-300 text-xs font-bold">إلغاء</button>
+                <button onclick="saveSellerSettings()" class="px-5 py-2.5 rounded-xl metallic-bg text-xs font-black">حفظ الإعدادات</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Order Confirmation Receipt Modal -->
+    <div id="receiptModal" class="fixed inset-0 bg-black/80 backdrop-blur-sm z-50 hidden items-center justify-center p-4">
+        <div class="bg-zinc-950 border border-zinc-800 rounded-3xl max-w-md w-full p-6 space-y-4 shadow-2xl text-center">
+            <div class="w-14 h-14 rounded-2xl bg-emerald-500/15 border border-emerald-500/40 text-emerald-400 flex items-center justify-center mx-auto text-2xl">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="text-xl font-black">تم تجهيز طلبك بنجاح!</h3>
+            <p class="text-xs sm:text-sm text-zinc-400">
+                شكراً لثقتك بمتجر <span dir="ltr" class="font-brand text-zinc-200 font-bold">0/1 WEAR</span>. اضغط على الزر الأخضر لإرسال تفاصيل طلبك عبر واتساب لتأكيد الشحن الفوري.
+            </p>
+            <div id="receiptSummaryBox" class="bg-obsidian border border-zinc-800 rounded-2xl p-4 text-right text-xs space-y-1.5 text-zinc-300 max-h-56 overflow-y-auto whitespace-pre-line"></div>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2">
+                <a id="whatsappDirectLink" href="#" target="_blank" class="py-3 px-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-zinc-950 font-black text-xs sm:text-sm flex items-center justify-center gap-2 transition">
+                    <i class="fa-brands fa-whatsapp text-lg"></i>
+                    <span>إرسال عبر واتساب</span>
+                </a>
+                <button onclick="copyReceiptText()" class="py-3 px-4 rounded-xl bg-zinc-900 hover:bg-zinc-800 border border-zinc-700 text-zinc-200 font-bold text-xs sm:text-sm flex items-center justify-center gap-2 transition">
+                    <i class="fa-regular fa-copy"></i>
+                    <span>نسخ تفاصيل الطلب</span>
+                </button>
+            </div>
+            <button onclick="closeReceiptModal()" class="text-xs text-zinc-500 hover:text-zinc-300 pt-1">إغلاق والعودة للمتجر</button>
+        </div>
+    </div>
+
+    <!-- Floating Toast Notification -->
+    <div id="toastNotification" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 pointer-events-none bg-zinc-100 text-zinc-950 px-4 py-3 rounded-2xl shadow-2xl font-extrabold text-xs sm:text-sm flex items-center gap-2.5 border border-white">
+        <i class="fa-solid fa-circle-check text-emerald-600 text-base"></i>
+        <span id="toastMessage">تمت إضافة المنتج إلى السلة</span>
+    </div>
+
+    <!-- Store JavaScript Logic -->
+    <script>
+        // High-precision Studio Illustrations matching each of the 4 uploaded photos + Full Pack
+        const productIllustrations = {
+            // Matches 1000171083.jpg: Black T-shirt with large 3D metallic 0/1 WEAR logo on concrete table
+            tshirt: `
+                <svg viewBox="0 0 320 290" class="w-full h-60 mx-auto drop-shadow-[0_18px_22px_rgba(0,0,0,0.95)]">
+                    <defs>
+                        <linearGradient id="teeBody" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#222226"/>
+                            <stop offset="50%" stop-color="#111114"/>
+                            <stop offset="100%" stop-color="#070709"/>
+                        </linearGradient>
+                        <linearGradient id="silverLogo" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ffffff"/>
+                            <stop offset="45%" stop-color="#a1a1aa"/>
+                            <stop offset="75%" stop-color="#e4e4e7"/>
+                            <stop offset="100%" stop-color="#52525b"/>
+                        </linearGradient>
+                    </defs>
+                    <!-- Concrete Ledge Base -->
+                    <rect x="10" y="255" width="300" height="26" rx="3" fill="#27272a" opacity="0.65"/>
+                    <!-- T-Shirt Silhouette -->
+                    <path d="M100,26 L126,26 C134,42 186,42 194,26 L220,26 L274,72 L248,114 L216,95 L216,258 L104,258 L104,95 L72,114 L46,72 Z" fill="url(#teeBody)" stroke="#3f3f46" stroke-width="1.5"/>
+                    <path d="M122,26 C134,46 186,46 198,26" fill="none" stroke="#3f3f46" stroke-width="3.5"/>
+                    <!-- 3D Metallic 0/1 WEAR Chest Print -->
+                    <g transform="translate(110, 82) scale(0.37)">
+                        <circle cx="70" cy="65" r="48" fill="none" stroke="url(#silverLogo)" stroke-width="23" stroke-dasharray="260 18"/>
+                        <polygon points="150,115 185,15 205,15 170,115" fill="url(#silverLogo)"/>
+                        <polygon points="218,15 238,15 238,115 218,115" fill="url(#silverLogo)"/>
+                        <text x="135" y="166" text-anchor="middle" fill="url(#silverLogo)" font-family="Orbitron, sans-serif" font-weight="900" font-size="42" letter-spacing="8">WEAR</text>
+                    </g>
+                </svg>
+            `,
+            // Matches 1000171085.jpg: Charcoal Grey Hoodie + Black Hangtag + Matte Black Gift Box
+            hoodie: `
+                <svg viewBox="0 0 330 290" class="w-full h-60 mx-auto drop-shadow-[0_18px_22px_rgba(0,0,0,0.95)]">
+                    <defs>
+                        <linearGradient id="hoodieGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#52525b"/>
+                            <stop offset="55%" stop-color="#3b3b42"/>
+                            <stop offset="100%" stop-color="#26262b"/>
+                        </linearGradient>
+                        <linearGradient id="silverLogoH" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#ffffff"/>
+                            <stop offset="50%" stop-color="#d4d4d8"/>
+                            <stop offset="100%" stop-color="#71717a"/>
+                        </linearGradient>
+                    </defs>
+                    <!-- Concrete Ledge Base -->
+                    <rect x="8" y="255" width="314" height="26" rx="3" fill="#27272a" opacity="0.65"/>
+                    <!-- Hood -->
+                    <path d="M84,36 C84,6 178,6 178,36 L165,52 L97,52 Z" fill="#27272a" stroke="#71717a" stroke-width="1.5"/>
+                    <!-- Hoodie Body -->
+                    <path d="M80,36 L182,36 L232,86 L218,242 L190,242 L184,110 L184,256 L78,256 L78,110 L72,242 L44,242 L30,86 Z" fill="url(#hoodieGrad)" stroke="#71717a" stroke-width="1.5"/>
+                    <!-- Kangaroo Pocket -->
+                    <path d="M92,176 L170,176 L178,236 L84,236 Z" fill="#323238" stroke="#52525b" stroke-width="1.5"/>
+                    <!-- Drawstrings -->
+                    <line x1="118" y1="48" x2="118" y2="122" stroke="#a1a1aa" stroke-width="2.5" stroke-linecap="round"/>
+                    <line x1="144" y1="48" x2="144" y2="122" stroke="#a1a1aa" stroke-width="2.5" stroke-linecap="round"/>
+                    <!-- 0/1 WEAR Logo on Hoodie -->
+                    <g transform="translate(86, 78) scale(0.34)">
+                        <circle cx="70" cy="65" r="48" fill="none" stroke="url(#silverLogoH)" stroke-width="22" stroke-dasharray="260 18"/>
+                        <polygon points="150,115 185,15 205,15 170,115" fill="url(#silverLogoH)"/>
+                        <polygon points="218,15 238,15 238,115 218,115" fill="url(#silverLogoH)"/>
+                        <text x="135" y="165" text-anchor="middle" fill="url(#silverLogoH)" font-family="Orbitron, sans-serif" font-weight="900" font-size="42" letter-spacing="8">WEAR</text>
+                    </g>
+                    <!-- Luxury Matte Black Box & Hangtag on Right -->
+                    <rect x="202" y="124" width="102" height="134" rx="5" fill="#141417" stroke="#52525b" stroke-width="1.8"/>
+                    <g transform="translate(228, 164) scale(0.21)">
+                        <circle cx="70" cy="65" r="48" fill="none" stroke="#e4e4e7" stroke-width="22"/>
+                        <polygon points="150,115 185,15 205,15 170,115" fill="#e4e4e7"/>
+                        <polygon points="218,15 238,15 238,115 218,115" fill="#e4e4e7"/>
+                        <text x="135" y="165" text-anchor="middle" fill="#e4e4e7" font-family="Orbitron, sans-serif" font-weight="900" font-size="42" letter-spacing="8">WEAR</text>
+                    </g>
+                    <!-- Hangtag -->
+                    <rect x="176" y="172" width="32" height="54" rx="4" fill="#18181b" stroke="#71717a" stroke-width="1.2"/>
+                    <text x="192" y="204" text-anchor="middle" fill="#d4d4d8" font-family="Orbitron, sans-serif" font-weight="900" font-size="8">0/1</text>
+                </svg>
+            `,
+            // Matches 1000171065_2.jpg: Black & Grey Sneaker + Matte Black Collector Shoebox + Hangtag
+            sneaker: `
+                <svg viewBox="0 0 330 270" class="w-full h-60 mx-auto drop-shadow-[0_18px_22px_rgba(0,0,0,0.95)]">
+                    <defs>
+                        <linearGradient id="soleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" stop-color="#52525b"/>
+                            <stop offset="50%" stop-color="#71717a"/>
+                            <stop offset="100%" stop-color="#3f3f46"/>
+                        </linearGradient>
+                    </defs>
+                    <!-- Collector Matte Black Shoebox behind Sneaker -->
+                    <rect x="18" y="38" width="152" height="132" rx="6" fill="#121215" stroke="#3f3f46" stroke-width="1.8"/>
+                    <g transform="translate(62, 76) scale(0.24)">
+                        <circle cx="70" cy="65" r="48" fill="none" stroke="#d4d4d8" stroke-width="22"/>
+                        <polygon points="150,115 185,15 205,15 170,115" fill="#d4d4d8"/>
+                        <polygon points="218,15 238,15 238,115 218,115" fill="#d4d4d8"/>
+                        <text x="135" y="165" text-anchor="middle" fill="#d4d4d8" font-family="Orbitron, sans-serif" font-weight="900" font-size="42" letter-spacing="8">WEAR</text>
+                    </g>
+                    <!-- Sneaker Body -->
+                    <path d="M55,182 Q65,144 118,136 L182,86 Q202,76 216,106 L246,126 Q280,120 288,98 L298,182 Z" fill="#18181b" stroke="#52525b" stroke-width="1.8"/>
+                    <path d="M72,178 Q108,150 158,164 L208,124 L270,150 L288,182 Z" fill="#27272a" stroke="#71717a" stroke-width="1.4"/>
+                    <!-- Sculpted Grey/Black Sole -->
+                    <path d="M48,182 L302,182 L308,214 Q220,224 162,214 Q95,222 45,206 Z" fill="url(#soleGrad)" stroke="#a1a1aa" stroke-width="1.5"/>
+                    <path d="M45,206 L306,212 L300,222 L48,216 Z" fill="#09090b"/>
+                    <!-- 0/1 WEAR Side Metallic Emblem -->
+                    <g transform="translate(154, 134) scale(0.22)">
+                        <circle cx="70" cy="65" r="48" fill="none" stroke="#f4f4f5" stroke-width="22"/>
+                        <polygon points="150,115 185,15 205,15 170,115" fill="#f4f4f5"/>
+                        <polygon points="218,15 238,15 238,115 218,115" fill="#f4f4f5"/>
+                        <text x="135" y="165" text-anchor="middle" fill="#f4f4f5" font-family="Orbitron, sans-serif" font-weight="900" font-size="44" letter-spacing="6">WEAR</text>
+                    </g>
+                    <!-- Sneaker Hangtag -->
+                    <rect x="218" y="126" width="26" height="48" rx="3" fill="#141417" stroke="#71717a" stroke-width="1.2"/>
+                </svg>
+            `,
+            // Matches 1000171064_2.jpg: Black Baseball Cap with Silver 3D Embroidery
+            cap: `
+                <svg viewBox="0 0 300 260" class="w-full h-60 mx-auto drop-shadow-[0_18px_22px_rgba(0,0,0,0.95)]">
+                    <defs>
+                        <linearGradient id="capDome" x1="0%" y1="0%" x2="100%" y2="100%">
+                            <stop offset="0%" stop-color="#3f3f46"/>
+                            <stop offset="50%" stop-color="#18181b"/>
+                            <stop offset="100%" stop-color="#09090b"/>
+                        </linearGradient>
+                    </defs>
+                    <path d="M65,155 C65,62 235,62 235,155 Z" fill="url(#capDome)" stroke="#52525b" stroke-width="1.5"/>
+                    <ellipse cx="150" cy="63" rx="9" ry="4" fill="#27272a" stroke="#52525b"/>
+                    <path d="M52,152 Q150,176 248,152 Q212,212 115,208 Q38,200 52,152 Z" fill="#141417" stroke="#52525b" stroke-width="1.8"/>
+                    <path d="M68,166 Q148,186 225,166" fill="none" stroke="#3f3f46" stroke-width="1.2" stroke-dasharray="4 3"/>
+                    <g transform="translate(108, 90) scale(0.32)">
+                        <circle cx="70" cy="65" r="48" fill="none" stroke="#e4e4e7" stroke-width="23" stroke-dasharray="260 18"/>
+                        <polygon points="150,115 185,15 205,15 170,115" fill="#e4e4e7"/>
+                        <polygon points="218,15 238,15 238,115 218,115" fill="#e4e4e7"/>
+                        <text x="135" y="165" text-anchor="middle" fill="#e4e4e7" font-family="Orbitron, sans-serif" font-weight="900" font-size="42" letter-spacing="8">WEAR</text>
+                    </g>
+                </svg>
+            `,
+            // Full Pack 4-in-1 Collection
+            bundle: `
+                <svg viewBox="0 0 320 260" class="w-full h-60 mx-auto drop-shadow-[0_18px_24px_rgba(0,0,0,0.95)]">
+                    <rect x="145" y="52" width="142" height="168" rx="8" fill="#141417" stroke="#71717a" stroke-width="2"/>
+                    <path d="M145,52 L162,38 L298,38 L287,52 Z" fill="#27272a" stroke="#71717a" stroke-width="1.5"/>
+                    <path d="M32,74 L74,52 L136,52 L166,76 L150,222 L48,222 Z" fill="#27272a" stroke="#a1a1aa" stroke-width="1.5"/>
+                    <g transform="translate(178, 102) scale(0.28)">
+                        <circle cx="70" cy="65" r="48" fill="none" stroke="#ffffff" stroke-width="22"/>
+                        <polygon points="150,115 185,15 205,15 170,115" fill="#ffffff"/>
+                        <polygon points="218,15 238,15 238,115 218,115" fill="#ffffff"/>
+                        <text x="135" y="165" text-anchor="middle" fill="#ffffff" font-family="Orbitron, sans-serif" font-weight="900" font-size="42" letter-spacing="8">WEAR</text>
+                    </g>
+                    <g transform="translate(66, 104) scale(0.25)">
+                        <circle cx="70" cy="65" r="48" fill="none" stroke="#e4e4e7" stroke-width="22"/>
+                        <polygon points="150,115 185,15 205,15 170,115" fill="#e4e4e7"/>
+                        <polygon points="218,15 238,15 238,115 218,115" fill="#e4e4e7"/>
+                        <text x="135" y="165" text-anchor="middle" fill="#e4e4e7" font-family="Orbitron, sans-serif" font-weight="900" font-size="42" letter-spacing="8">WEAR</text>
+                    </g>
+                    <rect x="128" y="148" width="32" height="52" rx="4" fill="#09090b" stroke="#a1a1aa" stroke-width="1.2"/>
+                </svg>
+            `
+        };
+
+        // Complete Arabic Product Catalog matching the exact uploaded photos
+        const products = [
+            {
+                id: 'hoodie-gris',
+                title: 'هودي 0/1 WEAR الرمادي الفاخر + العلبة الرسمية',
+                subtitle: 'قطن ثقيل مبطن عالي الجودة بشعار 0/1 WEAR المعدني البارز مع العلبة السوداء الفاخرة والتاغ الرسمي',
+                price: 349,
+                oldPrice: 420,
+                category: 'clothing',
+                badge: 'شامل العلبة الفاخرة 🎁',
+                badgeColor: 'bg-zinc-100 text-zinc-950',
+                isBundle: false,
+                sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+                selectedSize: 'L',
+                photoHint: 'صورة الهودي الرمادي مع العلبة (1000171085.jpg)',
+                svg: productIllustrations.hoodie
+            },
+            {
+                id: 'tee-noir',
+                title: 'تيشيرت 0/1 WEAR الأسود (الإصدار المعدني)',
+                subtitle: 'قماش قطني ممتاز 100% بقصة رياضية عصرية وطباعة 0/1 WEAR ثلاثية الأبعاد بلمسة كروم',
+                price: 199,
+                oldPrice: 250,
+                category: 'clothing',
+                badge: 'الأكثر مبيعاً ⭐',
+                badgeColor: 'bg-amber-400 text-zinc-950',
+                isBundle: false,
+                sizes: ['S', 'M', 'L', 'XL', 'XXL'],
+                selectedSize: 'L',
+                photoHint: 'صورة التيشيرت الأسود (1000171083.jpg)',
+                svg: productIllustrations.tshirt
+            },
+            {
+                id: 'sneakers-01',
+                title: 'حذاء 0/1 WEAR الرياضي + العلبة الرسمية',
+                subtitle: 'تصميم عصري بالأسود والرمادي ونعل مريح عالي المتانة مع العلبة السوداء الفاخرة',
+                price: 449,
+                oldPrice: 550,
+                category: 'shoes',
+                badge: 'إصدار خاص 🔥',
+                badgeColor: 'bg-emerald-400 text-zinc-950',
+                isBundle: false,
+                sizes: ['40', '41', '42', '43', '44'],
+                selectedSize: '42',
+                photoHint: 'صورة الحذاء الرياضي مع العلبة (1000171065_2.jpg)',
+                svg: productIllustrations.sneaker
+            },
+            {
+                id: 'casquette-noire',
+                title: 'قبعة 0/1 WEAR السوداء المطرزة 3D',
+                subtitle: 'تطريز ثلاثي الأبعاد بارز بالخيط الفضي المعدني مع حزام خلفي قابل للتعديل لجميع المقاسات',
+                price: 149,
+                oldPrice: 199,
+                category: 'accessories',
+                badge: 'تطريز 3D بارز',
+                badgeColor: 'bg-zinc-800 text-zinc-100 border border-zinc-600',
+                isBundle: false,
+                sizes: ['مقاس موحد (قابل للتعديل)'],
+                selectedSize: 'مقاس موحد (قابل للتعديل)',
+                photoHint: 'صورة القبعة السوداء (1000171064_2.jpg)',
+                svg: productIllustrations.cap
+            },
+            {
+                id: 'pack-complet',
+                title: 'الباقة الملكية الكاملة — Full Pack 0/1 WEAR (4 قطع + العلب)',
+                subtitle: 'تشمل: التيشيرت الأسود + الهودي الرمادي + الحذاء الرياضي + القبعة المطرزة + العلب السوداء الرسمية',
+                price: 949,
+                oldPrice: 1146,
+                category: 'packs',
+                badge: 'وفّر 197 درهم 👑',
+                badgeColor: 'bg-amber-500 text-zinc-950',
+                isBundle: true,
+                clothingSizes: ['S', 'M', 'L', 'XL', 'XXL'],
+                selectedClothingSize: 'L',
+                shoeSizes: ['40', '41', '42', '43', '44'],
+                selectedShoeSize: '42',
+                photoHint: 'صورة الطقم الكامل أو العارض',
+                svg: productIllustrations.bundle
+            }
+        ];
+
+        // Store State
+        let cart = [];
+        let currentCategory = 'all';
+        let searchQuery = '';
+        let sellerWhatsapp = localStorage.getItem('01wear_seller_wa') || '212600000000';
+        let shippingFee = parseInt(localStorage.getItem('01wear_shipping_fee') || '0', 10);
+        // Show photo upload button on cards by default so user can immediately place their photos
+        let showCardPhotoBtn = localStorage.getItem('01wear_show_card_photo') !== 'false';
+        let customProductImages = JSON.parse(localStorage.getItem('01wear_custom_images') || '{}');
+        let currentUploadProductId = null;
+        let lastReceiptText = '';
+
+        // Initialize Store
+        function initStore() {
+            document.getElementById('sellerWhatsappInput').value = sellerWhatsapp;
+            document.getElementById('sellerShippingInput').value = shippingFee;
+            document.getElementById('adminPhotoToggleCheckbox').checked = showCardPhotoBtn;
+            renderProducts();
+            updateCartUI();
+        }
+
+        // Render Product Cards
+        function renderProducts() {
+            const grid = document.getElementById('productsGrid');
+            const filtered = products.filter(p => {
+                const matchesCat = currentCategory === 'all' || p.category === currentCategory;
+                const matchesSearch = p.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                      p.subtitle.toLowerCase().includes(searchQuery.toLowerCase());
+                return matchesCat && matchesSearch;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full py-12 text-center bg-zinc-900/40 rounded-3xl border border-zinc-800">
+                        <p class="text-zinc-400 text-base">لا توجد منتجات مطابقة لبحثك.</p>
+                        <button onclick="filterProducts('all')" class="mt-3 px-4 py-2 rounded-xl metallic-bg text-xs font-black">عرض جميع المنتجات</button>
+                    </div>
+                `;
+                return;
+            }
+
+            grid.innerHTML = filtered.map(product => {
+                const customImg = customProductImages[product.id];
+                const visualContent = customImg
+                    ? `<img src="${customImg}" alt="${product.title}" class="w-full h-64 object-cover rounded-2xl mx-auto shadow-xl" />`
+                    : product.svg;
+
+                const sizeSelectorHTML = product.isBundle ? `
+                    <div class="pt-2 space-y-2.5">
+                        <div>
+                            <label class="block text-xs font-bold text-zinc-300 mb-1">مقاس الملابس (التيشيرت والهودي):</label>
+                            <div class="flex flex-wrap gap-1.5" dir="ltr">
+                                ${product.clothingSizes.map(size => `
+                                    <button type="button"
+                                        onclick="selectBundleClothingSize('${product.id}', '${size}')"
+                                        class="px-3 py-1 rounded-lg text-xs font-extrabold transition border ${product.selectedClothingSize === size ? 'bg-zinc-100 text-zinc-950 border-white shadow' : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-zinc-600'}">
+                                        ${size}
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold text-zinc-300 mb-1">مقاس الحذاء الرياضي:</label>
+                            <div class="flex flex-wrap gap-1.5" dir="ltr">
+                                ${product.shoeSizes.map(size => `
+                                    <button type="button"
+                                        onclick="selectBundleShoeSize('${product.id}', '${size}')"
+                                        class="px-3 py-1 rounded-lg text-xs font-extrabold transition border ${product.selectedShoeSize === size ? 'bg-zinc-100 text-zinc-950 border-white shadow' : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-zinc-600'}">
+                                        ${size}
+                                    </button>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                ` : `
+                    <div class="pt-2">
+                        <label class="block text-xs font-bold text-zinc-300 mb-1.5">اختر المقاس:</label>
+                        <div class="flex flex-wrap gap-1.5" dir="ltr">
+                            ${product.sizes.map(size => `
+                                <button type="button"
+                                    onclick="selectProductSize('${product.id}', '${size}')"
+                                    class="px-3.5 py-1.5 rounded-lg text-xs font-extrabold transition border ${product.selectedSize === size ? 'bg-zinc-100 text-zinc-950 border-white shadow' : 'bg-zinc-900 text-zinc-400 border-zinc-800 hover:border-zinc-600'}">
+                                    ${size}
+                                </button>
+                            `).join('')}
+                        </div>
+                    </div>
+                `;
+
+                return `
+                <div class="rounded-3xl bg-zincCard metallic-border overflow-hidden flex flex-col justify-between transition duration-300 hover:-translate-y-1 shadow-xl">
+                    
+                    <!-- Product Visual Area -->
+                    <div>
+                        <div class="relative studio-backdrop p-4 border-b border-zinc-800/80">
+                            <span class="absolute top-3.5 right-3.5 z-10 px-3 py-1 rounded-full text-[11px] font-black ${product.badgeColor}">
+                                ${product.badge}
+                            </span>
+                            <span class="absolute top-3.5 left-3.5 z-10 px-2.5 py-1 rounded-lg bg-obsidian/85 border border-zinc-700 text-[11px] font-extrabold text-emerald-400">
+                                وفّر ${product.oldPrice - product.price} درهم
+                            </span>
+                            
+                            ${visualContent}
+
+                            <!-- Direct Button to Insert User's Attached Photo -->
+                            ${showCardPhotoBtn ? `
+                                <button type="button" onclick="triggerPhotoUpload('${product.id}')" class="mt-3 w-full py-2 px-3 rounded-xl bg-zinc-900/90 hover:bg-zinc-800 border border-zinc-700 text-zinc-200 font-bold text-xs flex items-center justify-center gap-2 transition">
+                                    <i class="fa-solid fa-camera text-emerald-400"></i>
+                                    <span>${customImg ? 'تغيير صورة المنتج' : 'إدراج صورتك الحقيقية لهذا المنتج'}</span>
+                                </button>
+                            ` : ''}
+                        </div>
+
+                        <!-- Product Details -->
+                        <div class="p-5 space-y-3">
+                            <div>
+                                <h3 class="text-base sm:text-lg font-black text-white leading-snug">${product.title}</h3>
+                                <p class="text-xs text-zinc-400 mt-1 leading-relaxed">${product.subtitle}</p>
+                            </div>
+
+                            <!-- Price Row -->
+                            <div class="flex items-baseline gap-2.5 pt-1">
+                                <span class="text-2xl font-black text-white">${product.price} <small class="text-xs font-bold text-zinc-300">درهم</small></span>
+                                <span class="text-xs text-zinc-500 line-through">${product.oldPrice} درهم</span>
+                            </div>
+
+                            <!-- Size Selector -->
+                            ${sizeSelectorHTML}
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="p-5 pt-0 grid grid-cols-2 gap-2.5">
+                        <button onclick="addToCart('${product.id}', false)" class="py-3 px-3 rounded-xl bg-zinc-900 hover:bg-zinc-800 text-zinc-100 border border-zinc-700 font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition">
+                            <i class="fa-solid fa-cart-plus"></i>
+                            <span>أضف للسلة</span>
+                        </button>
+                        <button onclick="addToCart('${product.id}', true)" class="py-3 px-3 rounded-xl metallic-bg font-black text-xs sm:text-sm flex items-center justify-center gap-1.5 transition">
+                            <i class="fa-solid fa-bolt"></i>
+                            <span>اطلب الآن</span>
+                        </button>
+                    </div>
+
+                </div>
+                `;
+            }).join('');
+        }
+
+        // Size Selection Handlers
+        function selectProductSize(productId, size) {
+            const item = products.find(p => p.id === productId);
+            if (item) {
+                item.selectedSize = size;
+                renderProducts();
+            }
+        }
+
+        function selectBundleClothingSize(productId, size) {
+            const item = products.find(p => p.id === productId);
+            if (item) {
+                item.selectedClothingSize = size;
+                renderProducts();
+            }
+        }
+
+        function selectBundleShoeSize(productId, size) {
+            const item = products.find(p => p.id === productId);
+            if (item) {
+                item.selectedShoeSize = size;
+                renderProducts();
+            }
+        }
+
+        // Photo Studio Modal for Managing All Product Images
+        function openPhotoStudioModal() {
+            renderPhotoStudioCards();
+            const modal = document.getElementById('photoStudioModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closePhotoStudioModal() {
+            const modal = document.getElementById('photoStudioModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function renderPhotoStudioCards() {
+            const container = document.getElementById('photoStudioCards');
+            container.innerHTML = products.map(p => {
+                const hasCustom = Boolean(customProductImages[p.id]);
+                return `
+                    <div class="p-3.5 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-between gap-3">
+                        <div class="space-y-1">
+                            <div class="text-xs sm:text-sm font-extrabold text-white">${p.title}</div>
+                            <div class="text-[11px] text-zinc-400">${p.photoHint}</div>
+                            <div class="text-[11px] font-bold ${hasCustom ? 'text-emerald-400' : 'text-amber-400'}">
+                                ${hasCustom ? '✔️ تم إدراج صورتك الحقيقية' : '• يستخدم الرسم التوضيحي حالياً'}
+                            </div>
+                        </div>
+                        <button type="button" onclick="triggerPhotoUpload('${p.id}')" class="px-3.5 py-2 rounded-xl metallic-bg font-black text-xs shrink-0 flex items-center gap-1.5">
+                            <i class="fa-solid fa-upload"></i>
+                            <span>اختر الصورة</span>
+                        </button>
+                    </div>
+                `;
+            }).join('');
+        }
+
+        function triggerPhotoUpload(productId) {
+            currentUploadProductId = productId;
+            document.getElementById('productImageUploader').click();
+        }
+
+        function handleImageFileSelected(event) {
+            const file = event.target.files[0];
+            if (!file || !currentUploadProductId) return;
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                const img = new Image();
+                img.onload = function() {
+                    const canvas = document.createElement('canvas');
+                    const maxDim = 750;
+                    let w = img.width;
+                    let h = img.height;
+                    if (w > h && w > maxDim) {
+                        h = Math.round((h * maxDim) / w);
+                        w = maxDim;
+                    } else if (h > maxDim) {
+                        w = Math.round((w * maxDim) / h);
+                        h = maxDim;
+                    }
+                    canvas.width = w;
+                    canvas.height = h;
+                    const ctx = canvas.getContext('2d');
+                    ctx.drawImage(img, 0, 0, w, h);
+                    const compressedDataUrl = canvas.toDataURL('image/jpeg', 0.84);
+
+                    try {
+                        customProductImages[currentUploadProductId] = compressedDataUrl;
+                        localStorage.setItem('01wear_custom_images', JSON.stringify(customProductImages));
+                        renderProducts();
+                        if (!document.getElementById('photoStudioModal').classList.contains('hidden')) {
+                            renderPhotoStudioCards();
+                        }
+                        showToast('تم حفظ وإدراج صورة المنتج بنجاح!');
+                    } catch (err) {
+                        showToast('حجم الصورة كبير جداً، جرب صورة أخرى.');
+                    }
+                };
+                img.src = e.target.result;
+            };
+            reader.readAsDataURL(file);
+            event.target.value = '';
+        }
+
+        function resetCustomPhotos() {
+            customProductImages = {};
+            localStorage.removeItem('01wear_custom_images');
+            renderProducts();
+            renderPhotoStudioCards();
+            showToast('تمت استعادة الصور الافتراضية.');
+        }
+
+        // Filter Products by Category
+        function filterProducts(cat) {
+            currentCategory = cat;
+            document.querySelectorAll('.cat-pill').forEach(btn => {
+                if (btn.dataset.cat === cat) {
+                    btn.className = 'cat-pill shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-extrabold transition bg-zinc-100 text-zinc-950';
+                } else {
+                    btn.className = 'cat-pill shrink-0 px-4 py-1.5 rounded-full text-xs sm:text-sm font-bold transition bg-zinc-900 text-zinc-300 hover:bg-zinc-800 border border-zinc-800 flex items-center gap-1.5';
+                }
+            });
+            renderProducts();
+        }
+
+        // Search Handler
+        function handleSearch(val) {
+            searchQuery = val.trim();
+            renderProducts();
+        }
+
+        // Add Item to Cart
+        function addToCart(productId, openCheckoutImmediately = false) {
+            const product = products.find(p => p.id === productId);
+            if (!product) return;
+
+            const chosenSize = product.isBundle
+                ? `الملابس: ${product.selectedClothingSize} | الحذاء: ${product.selectedShoeSize}`
+                : product.selectedSize;
+
+            const cartKey = `${product.id}_${chosenSize}`;
+            const existing = cart.find(item => item.cartKey === cartKey);
+
+            if (existing) {
+                existing.qty += 1;
+            } else {
+                cart.push({
+                    cartKey,
+                    id: product.id,
+                    title: product.title,
+                    price: product.price,
+                    size: chosenSize,
+                    qty: 1
+                });
+            }
+
+            updateCartUI();
+
+            if (openCheckoutImmediately) {
+                toggleCart(true);
+            } else {
+                showToast(`تمت إضافة «${product.title}» إلى السلة`);
+            }
+        }
+
+        // Quick Buy Full Pack Bundle
+        function quickBuyBundle() {
+            addToCart('pack-complet', true);
+        }
+
+        // Change Quantity in Cart
+        function changeQty(cartKey, delta) {
+            const idx = cart.findIndex(i => i.cartKey === cartKey);
+            if (idx === -1) return;
+
+            cart[idx].qty += delta;
+            if (cart[idx].qty <= 0) {
+                cart.splice(idx, 1);
+            }
+            updateCartUI();
+        }
+
+        // Update Cart Drawer & Badge
+        function updateCartUI() {
+            const totalCount = cart.reduce((acc, item) => acc + item.qty, 0);
+            document.getElementById('cartCountBadge').textContent = totalCount;
+
+            const container = document.getElementById('cartItemsContainer');
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="text-center py-8 bg-zinc-900/40 rounded-2xl border border-zinc-800/80 space-y-2">
+                        <i class="fa-solid fa-bag-shopping text-2xl text-zinc-500"></i>
+                        <p class="text-xs sm:text-sm text-zinc-400">سلة المشتريات فارغة حالياً.</p>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = cart.map(item => `
+                    <div class="p-3.5 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-between gap-3">
+                        <div class="space-y-1">
+                            <h5 class="text-xs sm:text-sm font-extrabold text-white">${item.title}</h5>
+                            <div class="flex flex-wrap items-center gap-2 text-[11px] text-zinc-400">
+                                <span class="px-2 py-0.5 rounded bg-obsidian border border-zinc-800 text-zinc-300">المقاس: ${item.size}</span>
+                                <span class="font-extrabold text-emerald-400">${item.price * item.qty} درهم</span>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-1.5 bg-obsidian border border-zinc-800 rounded-xl p-1 shrink-0">
+                            <button type="button" onclick="changeQty('${item.cartKey}', -1)" class="w-6 h-6 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 text-xs flex items-center justify-center">-</button>
+                            <span class="px-2 text-xs font-black">${item.qty}</span>
+                            <button type="button" onclick="changeQty('${item.cartKey}', 1)" class="w-6 h-6 rounded-lg bg-zinc-900 hover:bg-zinc-800 text-zinc-300 text-xs flex items-center justify-center">+</button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            const subtotal = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+            const finalShipping = subtotal > 0 ? shippingFee : 0;
+            const grandTotal = subtotal + finalShipping;
+
+            document.getElementById('cartSubtotal').textContent = `${subtotal} درهم`;
+            document.getElementById('cartShipping').textContent = shippingFee === 0 ? 'توصيل مجاني' : `${shippingFee} درهم`;
+            document.getElementById('cartTotal').textContent = `${grandTotal} درهم`;
+        }
+
+        // Toggle Slide-over Cart Drawer (RTL Left Drawer)
+        function toggleCart(open) {
+            const drawer = document.getElementById('cartDrawer');
+            const backdrop = document.getElementById('cartDrawerBackdrop');
+
+            if (open) {
+                backdrop.classList.remove('hidden');
+                setTimeout(() => backdrop.classList.remove('opacity-0'), 10);
+                drawer.classList.remove('-translate-x-full');
+            } else {
+                backdrop.classList.add('opacity-0');
+                drawer.classList.add('-translate-x-full');
+                setTimeout(() => backdrop.classList.add('hidden'), 300);
+            }
+        }
+
+        // Submit COD Order & Open WhatsApp in Arabic
+        function submitOrder(e) {
+            e.preventDefault();
+
+            if (cart.length === 0) {
+                showToast('يرجى إضافة منتج واحد على الأقل إلى السلة.');
+                return;
+            }
+
+            const name = document.getElementById('custName').value.trim();
+            const phone = document.getElementById('custPhone').value.trim();
+            const city = document.getElementById('custCity').value;
+            const address = document.getElementById('custAddress').value.trim();
+            const notes = document.getElementById('custNotes').value.trim();
+            const subtotal = cart.reduce((acc, item) => acc + (item.price * item.qty), 0);
+            const grandTotal = subtotal + shippingFee;
+
+            const itemsLines = cart.map((item, idx) =>
+                `${idx + 1}. ${item.title}\n   • المقاس: ${item.size} | الكمية: ${item.qty} | المجموع: ${item.price * item.qty} درهم`
+            ).join('\n');
+
+            const shippingLine = shippingFee === 0 ? 'مجاني (0 درهم)' : `${shippingFee} درهم`;
+
+            const message = `🛍️ *طلب جديد — متجر 0/1 WEAR*\n` +
+                `----------------------------------\n` +
+                `👤 *الاسم الكامل:* ${name}\n` +
+                `📞 *رقم الهاتف:* ${phone}\n` +
+                `🏙️ *المدينة:* ${city}\n` +
+                `📍 *العنوان:* ${address}\n` +
+                (notes ? `📝 *ملاحظة:* ${notes}\n` : '') +
+                `----------------------------------\n` +
+                `📦 *المنتجات المطلوبة:*\n${itemsLines}\n` +
+                `----------------------------------\n` +
+                `🚚 *التوصيل:* ${shippingLine}\n` +
+                `💰 *المبلغ الإجمالي للدفع عند الاستلام:* ${grandTotal} درهم`;
+
+            lastReceiptText = message;
+            document.getElementById('receiptSummaryBox').textContent = message;
+
+            const cleanWa = sellerWhatsapp.replace(/[^0-9]/g, '');
+            const waUrl = `https://wa.me/${cleanWa}?text=${encodeURIComponent(message)}`;
+            document.getElementById('whatsappDirectLink').href = waUrl;
+
+            toggleCart(false);
+            const modal = document.getElementById('receiptModal');
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+
+            window.open(waUrl, '_blank');
+        }
+
+        function closeReceiptModal() {
+            const modal = document.getElementById('receiptModal');
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function copyReceiptText() {
+            const temp = document.createElement('textarea');
+            temp.value = lastReceiptText;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+            showToast('تم نسخ تفاصيل الطلب بنجاح!');
+        }
+
+        // Seller Settings Modal
+        function toggleSellerModal() {
+            const modal = document.getElementById('sellerModal');
+            modal.classList.toggle('hidden');
+            modal.classList.toggle('flex');
+        }
+
+        function saveSellerSettings() {
+            const waInput = document.getElementById('sellerWhatsappInput').value.trim();
+            const shipInput = parseInt(document.getElementById('sellerShippingInput').value || '0', 10);
+            const photoBtnChecked = document.getElementById('adminPhotoToggleCheckbox').checked;
+
+            if (waInput) {
+                sellerWhatsapp = waInput;
+                localStorage.setItem('01wear_seller_wa', sellerWhatsapp);
+            }
+            shippingFee = isNaN(shipInput) || shipInput < 0 ? 0 : shipInput;
+            localStorage.setItem('01wear_shipping_fee', shippingFee);
+
+            showCardPhotoBtn = photoBtnChecked;
+            localStorage.setItem('01wear_show_card_photo', showCardPhotoBtn);
+
+            renderProducts();
+            updateCartUI();
+            toggleSellerModal();
+            showToast('تم حفظ إعدادات المتجر بنجاح!');
+        }
+
+        // Toast Helper
+        function showToast(msg) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastMessage').textContent = msg;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            setTimeout(() => {
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 2600);
+        }
+
+        window.onload = initStore;
+    </script>
+</body>
+</html>
+```
